@@ -8,15 +8,15 @@ mydb = mysql.connector.connect(
 )
 connection = mydb.cursor()
 #Select Table with pandas
-frame = pd.read_sql("SELECT * FROM marketinglist", mydb)
+frame = pd.read_sql("SELECT * FROM MYSQLTABLE", mydb)
 #Select Column Of Emails
 emaily = frame["emaily"]
-#Iterate
+#ForLoop Over Emails
 for i in range(len(emaily)):
     emails = emaily[i]
     #Open the html file you'd like to send
     with open(
-        "path-to-html",
+        "/path/to/html",
         "r",
         encoding="utf-8",
     ) as f:
